@@ -1,0 +1,12 @@
+<h5>
+    <div *ngFor="let item of retrieveData;index as i">
+    <span>UserName:</span>{{this.retrieveData[i].userName}} <br>
+    <span>FirstName:</span>{{this.retrieveData[i].firstName}} <br>
+    <span>LastName:</span>{{this.retrieveData[i].lastName}} <br>
+    <span>PhoneNumber:</span>{{this.retrieveData[i].phoneNumber}} <br>
+    <span>Email:</span>{{this.retrieveData[i].email}} <br>
+    <img src="{{this.retrieveData[i].image}}" alt="" height=100px>
+    <br>
+    <br>
+</div>
+</h5>

@@ -1,0 +1,19 @@
+.existing-user{
+    display: inline-block;
+}
+
+#div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#info{
+  text-align: left;
+  width: 25%;
+  margin: auto;
+  margin-top: 20px;
+}
+span{
+    font-weight: bolder;
+}

@@ -1,0 +1,20 @@
+<div class="container-fluid" id="div">
+    <form action="">
+        <div class="form-group existing-user">
+            <label for="phone">Enter PhoneNumber</label>
+            <input type="text" name="phone" id="phone" class="form-control " [(ngModel)]="personPhone.phone">
+        </div>
+        <button class="btn btn-primary ms-2" (click)="compare()">Fetch Data</button>
+    </form>
+
+
+</div>
+<div id="info">
+    <span>UserName:</span> {{this._register.dummy[this._register.fetchData(this.personPhone)].userName}} <br>
+    <span>FirstName:</span> {{this._register.dummy[this._register.fetchData(this.personPhone)].firstName}}<br>
+    <span>LastName:</span> {{this._register.dummy[this._register.fetchData(this.personPhone)].lastName}}<br>
+    <span>PhoneNumber:</span> {{this._register.dummy[this._register.fetchData(this.personPhone)].phoneNumber}}<br>
+    <span>Email:</span> {{this._register.dummy[this._register.fetchData(this.personPhone)].email}}<br>
+    <span>Image:</span><img src=" {{this._register.dummy[this._register.fetchData(this.personPhone)].image}}" alt="Sorry!Photo not available">
+    
+</div>

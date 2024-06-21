@@ -1,0 +1,24 @@
+<div style="width: 50%; margin: auto;">
+    <h3>
+        So today we will be registering for a event which is yet to be decided. If you trust us enough please register.In
+        case you
+        have already put your faith in us and would like to see what we are up to you may login to see your details.
+    </h3>
+    <br><br><br>
+    <h6>I think this this is probably an employee registration System.</h6>
+</div>
+
+<div style="display: flex;justify-content: center;align-items: center;">
+    <button style="width: 15%; font-size: 0.75em;" class="btn btn-primary" (click)="showme=!showme">Click if you are
+        interested in sharing some feedback</button>
+</div>
+<div *ngIf="showme; else elseBlock">
+    <form style="width: 50%; margin: auto;" [formGroup]="feedBackForm" class="form-group">
+        <label for="FeedBack">FeedBack</label>
+        <textarea name="FeedBack" id="FeedBack" formControlName="feedBack" class="form-control" [(ngModel)]="feedBackinfo.feedback" col=30 rows="5"></textarea>
+        <label for="name">We would like to know your name:</label>
+        <input type="text" name="name" id="name" formControlName="name" class="form-control" [(ngModel)]="feedBackinfo.name">
+        <button class="btn btn-primary" (click)="submit()">Submit Feedback</button>
+    </form>
+</div>
+<ng-template #elseBlock></ng-template>

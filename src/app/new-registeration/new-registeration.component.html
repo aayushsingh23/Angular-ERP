@@ -1,0 +1,74 @@
+<div class="container-fluid" id="main">
+    <form [formGroup]="registrationForm" novalidate>
+        <div class="form-group">
+            <label for="userName">Enter UserName</label>
+            <input [class.is-invalid]="userName?.invalid && userName?.touched" formControlName="userName" type="text"
+                name="userName" id="userName" class="form-control" #user [(ngModel)]="forminfo.userName">
+            <small *ngIf="userName?.invalid && userName?.touched" class="text-danger">UserName is required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="firstName">Enter FirstName</label>
+            <input [class.is-invalid]="firstName?.invalid && firstName?.touched" formControlName="firstName" type="text"
+                name="firstName" id="firstName" class="form-control" [(ngModel)]="forminfo.firstName">
+            <small *ngIf="firstName?.invalid && firstName?.touched" class="text-danger">FirstName is required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Enter LastName</label>
+            <input formControlName="lastName" type="text" name="lastName" id="lastName" class="form-control"
+                [(ngModel)]="forminfo.lastName">
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber">Enter Phone Number</label>
+            <input [class.is-invalid]="phoneNumber?.invalid && phoneNumber?.touched" formControlName="phoneNumber"
+                type="text" name="phoneNumber" id="phoneNumber" class="form-control" [(ngModel)]="forminfo.phoneNumber">
+            <small *ngIf="phoneNumber?.invalid && phoneNumber?.touched" class="text-danger">PhoneNumber is
+                required</small>
+
+        </div>
+
+        <div class="form-group">
+            <label for="email">Enter Email</label>
+            <input [class.is-invalid]="email?.invalid && email?.touched" formControlName="email" type="email"
+                name="email" id="email" class="form-control" [(ngModel)]="forminfo.email">
+            <small *ngIf="email?.invalid && email?.touched" class="text-danger">Email is required</small>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="image">Upload photo</label>
+            <input formControlName="image" type="file" name="image" id="image" accept="image/*" capture="user"
+                class="form-control">
+        </div>  THIS DOES NOT USE WBECAM TO CAPTURE IMAGE  -->
+        <button class="btn btn-primary" (click)="show=!show">Click To Capture Image</button>
+        <div *ngIf="show">
+           
+                <div class="col-md-12">
+                    <webcam [trigger]="invokeObservable" (imageCapture)="captureImg($event)"></webcam>
+                </div>
+                <div class="col-md-12">
+                    <button class="btn btn-success" (click)="getSnapshot(); show=!show">
+                        Capture Image
+                    </button>
+                </div>
+            </div>
+
+                <div class="col-12">
+                    <div id="results">Your Submited Image is here:</div>
+
+                    <input type="image" [src]="forminfo.image" alt="Capture Image" formControlName="image"
+                        height="100px">
+
+                </div>
+           
+        
+            <button id="button" type="submit" class="btn btn-primary mt-2" (click)="addPerson()">Submit</button>
+        
+
+
+    </form>
+
+
+</div>
+<br>
